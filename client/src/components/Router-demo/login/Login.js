@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { userAuthorLoginThunk } from '../../../redux/slices/userAuthorSlice';
 import './Login.css'; // Importing the CSS file
 
@@ -32,7 +32,8 @@ function Login() {
         <div className='login-container'>
             <form className="form" onSubmit={handleSubmit(handleLoginBtn)}>
                 <p className="form-title">Login to your account</p>
-                {errorOccurred && <p className='text-danger mx-auto'>{errMsg}</p>}
+                {/* {errorOccurred && <p className='text-danger mx-auto'>{errMsg}</p>} */}
+                {errorOccurred && typeof errMsg === 'string' && <p className='text-danger mx-auto'>{errMsg}</p>}
 
                 <div className="input-container">
                     <input 

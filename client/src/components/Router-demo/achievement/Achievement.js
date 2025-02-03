@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { BsClockFill } from "react-icons/bs";
+import { FaUserCircle } from 'react-icons/fa';
 import { IoCreate } from "react-icons/io5";
 import { MdDelete, MdEdit, MdRestore } from "react-icons/md";
 import { useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
+
 //import { axiosWithToken } from '../../../axioswithtoken';
 import axios from 'axios';
 import './Achievement.css';
@@ -29,10 +31,10 @@ function Achievement() {
         setAchievementEditStatus(true);
     };
 
-    const token = localStorage.getItem('token');
-    const axiosWithToken = axios.create({
-        headers: { Authorization: `Bearer ${token}` }
-    });
+    // const token = localStorage.getItem('token');
+    // const axiosWithToken = axios.create({
+    //     headers: { Authorization: `Bearer ${token}` }
+    // });
 
     const saveModifiedData = async (editedAchievement) => {
         console.log("editedAchievement", editedAchievement)
@@ -72,6 +74,8 @@ function Achievement() {
             setAchievementDeleteStatus("true");
         }
     };
+
+
 
     return (
         <div className="achievement-container">
@@ -117,12 +121,12 @@ function Achievement() {
                         />
                         <div className="achievement-details">
                             <div className='right d-flex justify-content-end'>
-                                <p className='fs-5'><strong>Username:</strong> {state.state.username}</p>
+                                <p className='fs-5 right-username'>{state.state.username}<button className="details-button"><FaUserCircle className="username-icon" /></button></p>
                             </div>
                             <div className='middle mt-5'>
-                            <p className='fs-3'><strong>Faculty Name:</strong> {state.state.facultyname}</p>
-                            <p className='fs-3'><strong>Department:</strong> {state.state.department}</p>
-                            <p className='fs-3'><strong>Category:</strong> {state.state.category}</p>
+                                <p className='fs-3'><strong>Faculty Name:</strong> {state.state.facultyname}</p>
+                                <p className='fs-3'><strong>Department:</strong> {state.state.department}</p>
+                                <p className='fs-3'><strong>Category:</strong> {state.state.category}</p>
                             </div>
                             <p className="achievement-content fs-3 p-4">{state.state.content}</p>
                             {/* <button className="remove-button">Remove</button> */}

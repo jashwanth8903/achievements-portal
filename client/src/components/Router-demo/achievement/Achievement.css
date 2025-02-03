@@ -134,3 +134,17 @@
 .btn-success:hover {
   background-color: #218838;
 }
+
+.username-icon{
+  width: 40px;
+  height: 40px;
+}
+
+.right-username{
+  font-weight: bold;
+}
+
+.details-button {
+  border: none;
+
+}

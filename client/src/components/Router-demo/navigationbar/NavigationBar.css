@@ -1,7 +1,7 @@
 .main-nav {
-  background-color: #fff;
+  background-color: #333;
   border-bottom: 1px solid #ddd;
-  padding: 10px 20px;
+  padding: 20px 20px;
 }
 
 .nav-header {
@@ -12,12 +12,16 @@
 
 .nav-logo img {
   height: 40px;
+  /* filter: hue-rotate(240deg) brightness(1.1) contrast(1.2); */
+  filter: hue-rotate(270deg) brightness(11.5) contrast(99);
+
 }
 
 .nav-links {
   display: flex;
   flex-direction: row;
   align-items: center;
+  color: white;
 }
 
 .nav-links ul {
@@ -31,26 +35,30 @@
 .nav-link {
   display: flex;
   align-items: center;
-  color: black;
+  color: white;
   text-decoration: none;
   font-size: 20px;
   font-weight: bold;
+}
+
+.nav-link .active{
+  color: #007bff;
 }
 
 .logout-link{
   margin-top: 15px;
   margin-left: 20px;
   font-weight: bold;
-  color: black;
+  color: white;
   border: 1px solid gray;
-  background-color: #e0d9d9;
-  padding: 7px;
+  background-color: #007bff;
+  padding: 9px;
   text-decoration: none;
   border-radius: 9px;
 }
 
 .logout-link:hover{
-  background-color: #b3abab;
+  background-color: #0056b3;
   transition-duration: 0.3s;
 }
 

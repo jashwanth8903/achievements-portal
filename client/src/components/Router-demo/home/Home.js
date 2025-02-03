@@ -41,13 +41,13 @@ function Home() {
             <div className='content container'>
 
                 <section  className='intro py-5'>
-                <h1 className='about-title text-center'>About</h1>
+                <h1 className='about-title text-center text-primary'>About</h1>
                     <p className='description'>
                         The Faculty Achievement Portal is an online platform designed to showcase and recognize the professional accomplishments of faculty members within our academic institution. This portal serves as a comprehensive repository of achievements, fostering a culture of excellence and continuous improvement.
                     </p>
                 </section>
                 <section id='features' className='features py-5'>
-                    <h2 className='features-title text-center'>Key Features</h2>
+                    <h2 className='features-title text-center text-primary'>Key Features</h2>
                     <div className='row'>
                         <div className='col-md-4'>
                             <div className='feature-box'>
@@ -82,7 +82,7 @@ function Home() {
                     </div>
                 </section>
                 <section id='benefits' className='benefits py-5'>
-                    <h2 className='benefits-title text-center'>Benefits</h2>
+                    <h2 className='benefits-title text-center text-primary '>Benefits</h2>
                     <p className='benefits-description'>
                         The portal enhances motivation and morale by celebrating success, promotes transparency and accountability with clear record-keeping, and fosters collaboration and networking opportunities. It also bolsters the institution’s reputation by highlighting faculty strengths, aids in professional development by documenting career progress, and serves as a valuable resource for performance reviews and promotions.
                     </p>

@@ -112,6 +112,7 @@ export default function AddArticle() {
                     <div className="form-group">
                         <label htmlFor="inputImage">Upload Image</label>
                         <input type="file" name='image' accept='image/*' className="form-control" id="inputImage" {...register("image")} onChange={(e)=>setImage(e.target.files)} />
+                        
                     </div>
                 </div>
                 <button type="submit" className="btn btn-primary d-block mx-auto">Post</button>

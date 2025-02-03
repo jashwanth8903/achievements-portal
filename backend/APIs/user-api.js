@@ -59,6 +59,43 @@ userApp.post('/user', expressAsyncHandler(async (req, res) => {
     }
 }))
 
+
+//updating the faculty details
+userApp.put('/faculty-details', verifyToken, expressAsyncHandler(async (req, res) => {
+    const details = req.body;
+    console.log(details)
+    //update the details
+    let result = await facultycollection.updateOne({ username: details.username }, { $set: { ...details } })
+    let latestdetails = await facultycollection.findOne({ username: details.username })
+    console.log(result)
+    res.send({ message: "details updated", details: latestdetails })
+
+}))
+
+//view the faculty details
+userApp.get('/faculty-details/:username', expressAsyncHandler(async (req, res) => {
+    //get username from url
+    const facultyName = req.params.username
+    console.log(facultyName)
+    //get articles whose status is true
+    const details = await facultycollection.findOne({ username: facultyName });
+    res.send({ message: "faculty details", payload: details })
+    console.log(" faculty details :",details)
+}))
+
+//get details of all users
+userApp.get('/faculty-details', expressAsyncHandler(async (req, res) => {
+    //get achievementscollection from express app
+    const facultycollection = req.app.get('facultycollection')
+    //get all achievements
+    let facultyList = await facultycollection.find().toArray()
+    console.log(facultyList)
+    //send res
+    res.send({ message: "All faculty details", payload: facultyList })
+}))
+
+
+
 //user login route
 userApp.post('/login', expressAsyncHandler(async (req, res) => {
     //get user resource from client

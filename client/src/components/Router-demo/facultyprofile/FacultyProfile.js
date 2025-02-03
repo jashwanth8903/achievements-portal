@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaUserCircle } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { resetState } from '../../../redux/slices/userAuthorSlice';
@@ -26,7 +27,11 @@ function FacultyProfile() {
             </div> */}
             <div className="profile-content">
                 <div className="link-container">
-                    {/* <Link className="profile-link" to="all-achievements">All Achievements</Link> */}
+                    <div className="profile-container">
+                        <FaUserCircle className="profile-icon" />
+                        <h3 className='profile-name'>{stateObj.currentUser.username}</h3>
+                    </div>
+                    <Link className="profile-link" to="dashboard">Profile</Link>
                     <Link className="profile-link" to="achievements/:username">Achievements</Link>
                     <Link className="profile-link" to="add-achievement">Add New Achievements</Link>
                 </div>

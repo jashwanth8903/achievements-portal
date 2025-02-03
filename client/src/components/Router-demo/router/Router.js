@@ -1,6 +1,5 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-//import Dashboard from '../dashboard/Dashboard';
 import { Navigate } from 'react-router-dom';
 import Achievement from '../achievement/Achievement';
 import AchievementsByFaculty from '../achievementsbyfaculty/AchievementsByFaculty';
@@ -12,7 +11,8 @@ import Login from '../login/Login';
 import Main from '../main/Main';
 import Register from '../register/Register';
 import Achievements from '../achievements/Achievements';
-//import StudentProfile from '../studentprofile/StudentProfile';
+import Dashboard from '../dashboard/Dashboard';
+
 
 
 
@@ -48,17 +48,21 @@ function Router() {
                     element: <Achievement/>
                 },
                 {
+                    path: '/dashboard',
+                    element: <Dashboard/>
+                },
+                {
                     path: 'faculty-profile',
                     element: <FacultyProfile/>,
                     children:[
                         {
                             path: '',
-                            element: <Navigate to='achievements/:username'/>
+                            element: <Navigate to='dashboard'/>
                         },
-                        // {
-                        //     path: 'all-achievements',
-                        //     element: <Achievements/>
-                        // },
+                        {
+                            path: 'dashboard',
+                            element: <Dashboard/>
+                        },
                         {
                             path: 'add-achievement',
                             element: <AddArticle/>
@@ -69,25 +73,10 @@ function Router() {
                         },
                         {
                             path: 'achievement/:achievementId',
-                            element: <Achievement/>
+                            element: <Achievement/>,
                         },
                     ]
                 },
-                // {
-                //     path: 'student-profile',
-                //     element: <StudentProfile/>,
-                //     children:[
-                //         {
-                //             path: '',
-                //             element: <Achievements/>
-                //         },
-                //         {
-                //             path: 'achievement/:achievementId',
-                //             element: <Achievement/>
-                //         },
-                //     ]
-                // },
-                
             ]
         }
     ])

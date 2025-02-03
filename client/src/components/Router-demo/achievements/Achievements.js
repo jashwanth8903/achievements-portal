@@ -19,7 +19,7 @@ function Achievements() {
       headers: { Authorization: `Bearer ${token}` }
     });
     let res = await axiosWithToken.get(`http://localhost:5000/user-api/achievements/`);
-    console.log("response", res);
+    console.log("res", res);
     setAchievementsList(res.data.payload);
     setRecords(res.data.payload);
   };
@@ -50,7 +50,8 @@ function Achievements() {
 
   const readAchievementByAchievementId = (achievementObj) => {
     console.log(achievementObj);
-    navigate(`../achievement/${achievementObj.achievementId}`, { state: achievementObj });
+    
+    navigate(`../achievement/${achievementObj.achievementId}`, { state: achievementObj});
   };
 
   return (
